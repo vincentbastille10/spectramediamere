@@ -1293,3 +1293,186 @@ body:not(:hover) .cursor, body:not(:hover) .cursor-dot { opacity: 0; }
   .betty-name { font-size: 32px; }
   .contact-wrapper { gap: 40px; }
 }
+
+/* ============================================================
+   GOLD ACCENT (GRAAL)
+============================================================ */
+:root {
+  --gold-1: #ffd479;
+  --gold-2: #f5b73c;
+  --gold-3: #c8902a;
+  --gold-dim: rgba(245,183,60,0.12);
+  --gold-border: rgba(245,183,60,0.28);
+}
+.gradient-gold {
+  background: linear-gradient(135deg, var(--gold-1) 0%, var(--gold-2) 45%, var(--gold-3) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.tag-gold {
+  color: var(--gold-2) !important;
+  background: var(--gold-dim) !important;
+  border-color: var(--gold-border) !important;
+}
+.btn-graal {
+  background: linear-gradient(135deg, var(--gold-2) 0%, var(--gold-3) 100%);
+  color: #1a1206;
+  box-shadow: 0 0 30px rgba(245,183,60,0.2);
+}
+.btn-graal:hover { box-shadow: 0 8px 40px rgba(245,183,60,0.4); }
+
+/* ---- MyBetty price block ---- */
+.betty-price-row {
+  display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 16px;
+  margin-bottom: 24px; padding-bottom: 22px;
+  border-bottom: 1px solid var(--border);
+}
+.betty-price {
+  font-family: var(--font-display);
+  font-size: 34px; font-weight: 800; letter-spacing: -0.02em; color: var(--text);
+}
+.betty-price span { font-size: 15px; font-weight: 500; color: var(--text-3); margin-left: 2px; }
+.betty-trial {
+  font-size: 12px; font-weight: 600; color: #34d399;
+  background: rgba(52,211,153,0.1);
+  border: 1px solid rgba(52,211,153,0.25);
+  border-radius: 100px; padding: 5px 12px;
+}
+.betty-desc strong { color: var(--text); }
+
+/* ============================================================
+   GRAAL SECTION
+============================================================ */
+.graal-section {
+  padding: 120px 0; position: relative; overflow: hidden;
+  background:
+    radial-gradient(900px 500px at 80% -10%, rgba(245,183,60,0.10), transparent 60%),
+    var(--bg);
+}
+.graal-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(245,183,60,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,183,60,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.graal-grid {
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px;
+  align-items: start; position: relative; z-index: 1;
+}
+.graal-lead { font-size: 17px; line-height: 1.75; color: var(--text-2); margin-bottom: 32px; }
+.graal-lead strong { color: var(--text); }
+.graal-features { list-style: none; display: flex; flex-direction: column; gap: 18px; margin-bottom: 36px; }
+.graal-features li { display: flex; gap: 16px; align-items: flex-start; }
+.graal-features li > div { font-size: 14px; line-height: 1.6; color: var(--text-2); }
+.graal-features strong { color: var(--text); font-family: var(--font-display); font-size: 15px; }
+.graal-dot {
+  width: 30px; height: 30px; flex-shrink: 0; border-radius: 50%;
+  background: var(--gold-dim); border: 1px solid var(--gold-border);
+  color: var(--gold-2); font-family: var(--font-display); font-weight: 700; font-size: 13px;
+  display: flex; align-items: center; justify-content: center;
+}
+.graal-offer {
+  background: linear-gradient(160deg, rgba(245,183,60,0.08), rgba(200,144,42,0.02));
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-lg); padding: 28px;
+}
+.graal-offer-head {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px; margin-bottom: 18px;
+  padding-bottom: 18px; border-bottom: 1px solid var(--gold-border);
+}
+.graal-offer-label {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-2);
+}
+.graal-price { font-family: var(--font-display); font-size: 32px; font-weight: 800; color: var(--text); letter-spacing: -0.02em; }
+.graal-price span { font-size: 13px; font-weight: 500; color: var(--text-3); }
+.graal-offer-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+.graal-offer-list li { font-size: 14px; color: var(--text-2); display: flex; gap: 10px; align-items: flex-start; }
+.graal-offer-list li::before { content: '✦'; color: var(--gold-2); flex-shrink: 0; }
+.graal-offer-list strong { color: var(--text); }
+.graal-delivery { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--text-2); margin-bottom: 24px; }
+.graal-delivery strong { color: var(--gold-1); }
+.graal-delivery-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--gold-2); box-shadow: 0 0 10px var(--gold-2);
+  animation: pulse 2s ease-in-out infinite;
+}
+.graal-cta {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: 100%;
+  background: linear-gradient(135deg, var(--gold-1), var(--gold-3));
+  color: #1a1206; text-decoration: none; font-weight: 700; font-size: 15px;
+  padding: 16px 28px; border-radius: 100px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.graal-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(245,183,60,0.4); }
+.graal-visual { position: relative; }
+.graal-flow {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 28px; position: sticky; top: 100px;
+}
+.graal-flow-head {
+  display: flex; align-items: center; gap: 14px; margin-bottom: 22px;
+  padding-bottom: 20px; border-bottom: 1px solid var(--border);
+}
+.graal-mark {
+  width: 44px; height: 44px; flex-shrink: 0; border-radius: 12px;
+  background: linear-gradient(135deg, var(--gold-1), var(--gold-3));
+  color: #1a1206; font-size: 22px;
+  display: flex; align-items: center; justify-content: center;
+}
+.graal-flow-title { font-family: var(--font-display); font-weight: 800; font-size: 18px; color: var(--text); }
+.graal-flow-sub { font-size: 12px; color: var(--text-3); letter-spacing: 0.04em; }
+.flow-step {
+  display: flex; gap: 16px; align-items: flex-start;
+  background: var(--bg-2); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 18px;
+}
+.flow-step-live { border-color: var(--gold-border); background: linear-gradient(160deg, rgba(245,183,60,0.07), transparent); }
+.flow-num {
+  font-family: var(--font-display); font-weight: 700; font-size: 12px; color: var(--gold-2);
+  flex-shrink: 0; width: 26px; height: 26px; border-radius: 7px;
+  background: var(--gold-dim); border: 1px solid var(--gold-border);
+  display: flex; align-items: center; justify-content: center;
+}
+.flow-body h4 { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 5px; }
+.flow-body p { font-size: 13px; color: var(--text-2); line-height: 1.55; }
+.flow-arrow { text-align: center; color: var(--gold-2); font-size: 18px; margin: 8px 0; }
+
+/* ============================================================
+   FAQ SECTION
+============================================================ */
+.faq-section { padding: 120px 0; background: var(--bg-2); }
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 980px; margin: 0 auto; }
+.faq-item {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 4px 24px; height: fit-content;
+  transition: border-color var(--transition);
+}
+.faq-item[open] { border-color: var(--border-hover); }
+.faq-item summary {
+  cursor: pointer; list-style: none;
+  font-family: var(--font-display); font-weight: 700; font-size: 15px; color: var(--text);
+  padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+'; color: var(--cyan); font-size: 22px; font-weight: 400;
+  flex-shrink: 0; transition: transform var(--transition);
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p { font-size: 14px; line-height: 1.7; color: var(--text-2); padding: 0 0 24px; }
+.faq-item p a { color: var(--cyan); text-decoration: none; }
+.faq-item p a:hover { text-decoration: underline; }
+.faq-item strong { color: var(--text); }
+
+/* ---- responsive: GRAAL + FAQ ---- */
+@media (max-width: 1024px) {
+  .graal-grid { grid-template-columns: 1fr; gap: 40px; }
+  .graal-flow { position: static; }
+}
+@media (max-width: 768px) {
+  .faq-grid { grid-template-columns: 1fr; }
+  .graal-section, .faq-section { padding: 80px 0; }
+}

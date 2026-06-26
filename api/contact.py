@@ -16,6 +16,7 @@ RECIPIENT_NAME = "Spectra Media AI"
 PROJECT_LABELS = {
     "mybetty_fr": "MyBetty AI — France",
     "mybetty_us": "MyBetty AI — United States",
+    "graal": "GRAAL — Pre-order",
     "ai_website": "AI Website (Custom)",
     "automation": "AI Automation / Integration",
     "other": "Other",

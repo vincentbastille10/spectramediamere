@@ -65,7 +65,7 @@ navMobile.querySelectorAll('a').forEach(link => {
 // SCROLL REVEAL
 // ============================================================
 const revealElements = document.querySelectorAll(
-  '.studio-card, .betty-card, .why-item, .demo-feat, .contact-item, .section-header, .how-it-works, .why-card-main, .contact-form, .contact-info'
+  '.studio-card, .betty-card, .why-item, .demo-feat, .contact-item, .section-header, .how-it-works, .why-card-main, .contact-form, .contact-info, .graal-copy, .graal-visual, .faq-item'
 );
 
 revealElements.forEach(el => el.classList.add('reveal'));
