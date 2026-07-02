@@ -1,43 +1,6 @@
 /* script.js — Spectra Media AI */
 
 // ============================================================
-// CURSOR
-// ============================================================
-const cursor = document.getElementById('cursor');
-const cursorDot = document.getElementById('cursorDot');
-let mouseX = 0, mouseY = 0;
-let cursorX = 0, cursorY = 0;
-
-document.addEventListener('mousemove', (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-  cursorDot.style.left = mouseX + 'px';
-  cursorDot.style.top = mouseY + 'px';
-});
-
-function animateCursor() {
-  cursorX += (mouseX - cursorX) * 0.12;
-  cursorY += (mouseY - cursorY) * 0.12;
-  cursor.style.left = cursorX + 'px';
-  cursor.style.top = cursorY + 'px';
-  requestAnimationFrame(animateCursor);
-}
-animateCursor();
-
-document.querySelectorAll('a, button, .studio-card, .betty-card').forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    cursor.style.width = '50px';
-    cursor.style.height = '50px';
-    cursor.style.borderColor = 'rgba(61,214,245,1)';
-  });
-  el.addEventListener('mouseleave', () => {
-    cursor.style.width = '32px';
-    cursor.style.height = '32px';
-    cursor.style.borderColor = 'rgba(61,214,245,0.6)';
-  });
-});
-
-// ============================================================
 // NAV: scroll effect + mobile hamburger
 // ============================================================
 const nav = document.getElementById('nav');
@@ -65,7 +28,7 @@ navMobile.querySelectorAll('a').forEach(link => {
 // SCROLL REVEAL
 // ============================================================
 const revealElements = document.querySelectorAll(
-  '.studio-card, .betty-card, .why-item, .demo-feat, .contact-item, .section-header, .how-it-works, .why-card-main, .contact-form, .contact-info, .graal-copy, .graal-visual, .faq-item'
+  '.studio-card, .betty-card, .industry-card, .approach-card, .why-item, .demo-feat, .contact-item, .section-header, .how-it-works, .why-card-main, .contact-form, .contact-info, .graal-copy, .graal-visual, .faq-item, .about-photo, .about-copy'
 );
 
 revealElements.forEach(el => el.classList.add('reveal'));
