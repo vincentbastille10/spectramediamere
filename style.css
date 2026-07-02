@@ -45,6 +45,19 @@ body {
   color: var(--text);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url("public/images/nature/wheat-field.jpg");
+  background-size: cover;
+  background-position: center 30%;
+  background-attachment: fixed;
+  opacity: 0.05;
+  pointer-events: none;
 }
 
 /* ---- TYPOGRAPHY ---- */
@@ -221,6 +234,16 @@ body {
   position: absolute;
   inset: 0;
   z-index: 0;
+}
+.hero-field {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(180deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.86) 55%, rgba(255,255,255,0.98) 100%),
+    url("public/images/nature/wheat-field.jpg");
+  background-size: cover;
+  background-position: center 30%;
+  opacity: 0.9;
 }
 .mesh {
   position: absolute;
@@ -512,13 +535,25 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
   box-shadow: 0 24px 48px rgba(36,84,214,0.18);
 }
+.about-photo-forest {
+  background-image:
+    linear-gradient(160deg, rgba(36,84,214,0.55), rgba(91,62,194,0.6)),
+    url("public/images/nature/forest-light.jpg");
+  background-size: cover;
+  background-position: center;
+}
 .about-photo-initial {
+  position: relative;
+  z-index: 1;
   font-family: var(--font-display);
   font-size: 88px;
   font-weight: 800;
   color: #fff;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.25);
 }
 .about-photo-badge {
   display: inline-block;
@@ -620,7 +655,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 0% 0%, var(--cyan-dim), transparent 60%);
+  background: radial-gradient(circle at 0% 0%, rgba(185,121,26,0.1), transparent 60%);
   opacity: 0;
   transition: opacity var(--transition);
 }
@@ -632,13 +667,13 @@ body {
 }
 .card-icon {
   width: 52px; height: 52px;
-  background: var(--cyan-dim);
-  border: 1px solid rgba(14,127,176,0.2);
+  background: rgba(185,121,26,0.1);
+  border: 1px solid rgba(185,121,26,0.25);
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--cyan);
+  color: var(--gold);
   margin-bottom: 24px;
 }
 .studio-card h3 {
@@ -660,9 +695,9 @@ body {
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--cyan);
-  background: var(--cyan-dim);
-  border: 1px solid rgba(14,127,176,0.2);
+  color: var(--gold);
+  background: rgba(185,121,26,0.1);
+  border: 1px solid rgba(185,121,26,0.22);
   border-radius: 100px;
   padding: 4px 12px;
 }
@@ -674,6 +709,32 @@ body {
   padding: 100px 0 120px;
   background: var(--bg-2);
 }
+.wood-banner {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 40px;
+  background-image:
+    linear-gradient(100deg, rgba(20,16,10,0.88) 0%, rgba(20,16,10,0.72) 45%, rgba(20,16,10,0.4) 100%),
+    url("public/images/nature/wood-grain.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.wood-banner-text {
+  max-width: 640px;
+  padding: 48px;
+}
+.wood-banner-text .section-tag {
+  color: #f0c987;
+  background: rgba(240,201,135,0.12);
+  border: 1px solid rgba(240,201,135,0.3);
+}
+.wood-banner-text p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.88);
+}
+.wood-banner-text strong { color: #fff; }
 .approach-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -718,6 +779,18 @@ body {
                     linear-gradient(90deg, rgba(15,23,42,0.02) 1px, transparent 1px);
   background-size: 60px 60px;
 }
+.mybetty-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(100deg, var(--bg-2) 0%, rgba(246,247,250,0.7) 55%, rgba(246,247,250,0.94) 100%),
+    url("public/images/nature/wheat-field.jpg");
+  background-size: cover;
+  background-position: right center;
+  opacity: 0.12;
+}
+.mybetty-section .container { position: relative; z-index: 1; }
 .betty-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1051,12 +1124,22 @@ body {
   margin-bottom: 8px;
 }
 .why-item p { font-size: 14px; color: var(--text-2); line-height: 1.6; }
-.why-visual { position: relative; }
+.why-visual {
+  position: relative;
+  padding: 28px;
+  border-radius: var(--radius-lg);
+  background-image:
+    linear-gradient(160deg, rgba(255,255,255,0.94), rgba(255,255,255,0.88)),
+    url("public/images/nature/forest-light.jpg");
+  background-size: cover;
+  background-position: center;
+}
 .why-card-main {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
+  box-shadow: 0 24px 48px rgba(15,23,42,0.08);
 }
 .why-card-header {
   font-family: var(--font-display);
@@ -1270,6 +1353,16 @@ body {
 }
 
 /* ============================================================
+   NATURE DIVIDER
+============================================================ */
+.nature-divider {
+  height: 160px;
+  background-image: url("public/images/nature/wheat-field.jpg");
+  background-size: cover;
+  background-position: center 35%;
+}
+
+/* ============================================================
    FOOTER
 ============================================================ */
 .footer { border-top: 1px solid var(--border); }
@@ -1375,6 +1468,9 @@ body {
   .nav-links, .nav-cta { display: none; }
   .nav-hamburger { display: flex; }
   .nav-mobile.open { display: flex; }
+
+  .wood-banner-text { padding: 32px 24px; }
+  .nature-divider { height: 100px; }
 
   .hero-actions { flex-direction: column; align-items: center; }
   .hero-stats { gap: 20px; }

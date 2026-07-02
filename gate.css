@@ -1,0 +1,143 @@
+/* ============================================================
+   SPECTRA MEDIA AI — Gate page
+   Pure, single field, single word.
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --text: #1c1408;
+  --wheat-dark: #3a2c12;
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+.gate {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: #14100a;
+}
+
+.gate-photo {
+  position: absolute;
+  inset: 0;
+  background-image: url("public/images/nature/wheat-field.jpg");
+  background-size: cover;
+  background-position: center 40%;
+  transform: scale(1.06);
+  animation: gateDrift 22s ease-in-out infinite alternate;
+}
+@keyframes gateDrift {
+  from { transform: scale(1.06) translateY(0); }
+  to   { transform: scale(1.12) translateY(-1.5%); }
+}
+
+.gate-veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(20,16,10,0.55) 0%, rgba(20,16,10,0.15) 32%, rgba(20,16,10,0.25) 60%, rgba(20,16,10,0.75) 100%);
+}
+
+.gate-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  padding: 24px;
+}
+
+.gate-mark {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  animation: gateFade 1.2s 0.2s ease forwards;
+}
+.gate-mark .logo-mark { font-size: 20px; }
+
+.gate-line {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(15px, 2vw, 19px);
+  line-height: 1.6;
+  max-width: 480px;
+  color: rgba(255,255,255,0.92);
+  text-shadow: 0 2px 24px rgba(0,0,0,0.35);
+  opacity: 0;
+  animation: gateFade 1.2s 0.6s ease forwards;
+}
+
+.gate-enter {
+  margin-top: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text);
+  background: rgba(255,255,255,0.94);
+  text-decoration: none;
+  padding: 18px 44px;
+  border-radius: 100px;
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), background 0.35s, box-shadow 0.35s;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  opacity: 0;
+  animation: gateFade 1.2s 1s ease forwards;
+}
+.gate-enter:hover {
+  transform: translateY(-3px);
+  background: #fff;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.32);
+}
+.gate-enter svg { transition: transform 0.35s; }
+.gate-enter:hover svg { transform: translateX(4px); }
+
+@keyframes gateFade {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.gate-grain {
+  position: absolute;
+  bottom: 28px;
+  left: 0; right: 0;
+  z-index: 1;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  opacity: 0;
+  animation: gateFade 1.2s 1.4s ease forwards;
+}
+
+@media (max-width: 640px) {
+  .gate-line { font-size: 15px; padding: 0 8px; }
+  .gate-enter { padding: 16px 36px; }
+}
