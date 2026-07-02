@@ -578,13 +578,13 @@ body {
   border-color: var(--border-hover);
 }
 .industry-photo {
-  height: 140px;
+  height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-size: cover;
+  background-position: center;
 }
-.industry-photo-coach { background: linear-gradient(145deg, #1c3d5a, #2e6ea6); }
-.industry-photo-business { background: linear-gradient(145deg, #22315e, #3d4f9e); }
 .industry-photo-trades { background: linear-gradient(145deg, #35406b, #5b3ec2); }
 .industry-body { padding: 20px 22px 24px; }
 .industry-body h4 {
